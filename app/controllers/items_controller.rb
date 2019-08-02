@@ -34,7 +34,11 @@ class ItemsController < ApplicationController
     @item.update(item_params)
     redirect_to items_path
   end
-
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path
+  end
  
   private
 
